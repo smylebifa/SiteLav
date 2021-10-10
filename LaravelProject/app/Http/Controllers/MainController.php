@@ -21,7 +21,7 @@ class MainController extends Controller {
     }
 
     public function review_check(Request $request) {
-        $valid = $request->validate([
+        $request->validate([
            'email' => 'required|min:4|max:100',
            'subject' => 'required|min:4|max:100',
            'message' => 'required|min:15|max:500'
@@ -35,7 +35,6 @@ class MainController extends Controller {
         $review->save();
 
         return redirect()->route('review');
-
     }
 
 }
