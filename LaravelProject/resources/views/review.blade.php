@@ -21,7 +21,17 @@
         <input type="subject" id="subject" name="subject" placeholder="Введите отзыв" class="form-control"><br>
         <textarea name="message" id="message" placeholder="Введите сообщение" class="form-control"></textarea><br>
         <button type="submit" class="btb btn-success">Отправить</button>
-
     </form>
+    <br><br>
+
+    <h2>Все отзывы</h2>
+    @foreach($reviews as $el)
+        <div class="alert alert-warning">
+            <h4>{{$el->subject}}</h4>
+            <b>{{$el->email}}</b>
+            <p>{{$el->message}}</p>
+        </div>
+
+    @endforeach
 
 @endsection
